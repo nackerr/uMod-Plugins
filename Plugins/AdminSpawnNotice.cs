@@ -7,7 +7,7 @@ using Oxide.Core.Libraries;
 
 namespace Oxide.Plugins
 {
-    [Info("Admin Spawn Notice", "Ryz0r", "1.0.1")]
+    [Info("Admin Spawn Notice", "Ryz0r", "1.0.2")]
     [Description("Sends a notification to Discord when an admin spawns an item.")]
     public class AdminSpawnNotice : RustPlugin
     {
@@ -53,8 +53,6 @@ namespace Oxide.Plugins
             if (!arg.cmd.FullName.StartsWith(("inventory.give"))) return null;
             if (arg.Connection.authLevel < 1) return null;
             if (!permission.UserHasGroup(arg.Connection.ownerid.ToString(), "admin")) return null;
-
-            Puts(arg.Connection.authLevel.ToString());
 
             var itemSpawned = "";
             var amount = "";
