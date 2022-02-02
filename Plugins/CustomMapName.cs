@@ -5,11 +5,11 @@ using Steamworks;
 
 namespace Oxide.Plugins
 {
-    [Info("Custom Map Name", "Ryz0r", "1.0.0")]
+    [Info("Custom Map Name", "Ryz0r", "1.0.1")]
     [Description("Allows you to edit the Custom Map Name field without using a custom map.")]
     public class CustomMapName : RustPlugin
     {
-        private static Configuration _config;
+        private Configuration _config;
         protected override void SaveConfig() => Config.WriteObject(_config);
         protected override void LoadDefaultConfig() => _config = new Configuration();
         private string _cachedMapName;
@@ -92,6 +92,6 @@ namespace Oxide.Plugins
 
         private static bool ContainsOfficial(string name) => name.ToLower().Contains("official");
         private static bool TooShort(string name) => name.Length < 1;
-        private static bool NoNames() => _config.MapNamesToCycle.Length < 1;
+        private bool NoNames() => _config.MapNamesToCycle.Length < 1;
     }
 }
