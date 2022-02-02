@@ -1,13 +1,11 @@
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using Rust;
 using UnityEngine;
 using Application = UnityEngine.Application;
-using Server = ConVar.Server;
 
 namespace Oxide.Plugins
 {
-    [Info("Nav Mesh Error Fix", "Ryz0r", "1.1.1")]
+    [Info("Nav Mesh Error Fix", "Ryz0r", "1.1.2")]
     [Description("Fixes the dreaded NavMesh Error Spam.")]
     class NavMeshErrorFix : CovalencePlugin
     {
